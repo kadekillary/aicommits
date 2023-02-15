@@ -117,5 +117,5 @@ async function generateCommitMessage(prompt: string) {
   const json: any = await response.json();
   const aiCommit = json.choices[0].text;
 
-  return aiCommit.replace(/(\r\n|\n|\r)/gm, "");
+  return aiCommit.replace(/(\r\n|\n|\r)/gm, "").replace(/\.$/, "");
 }
